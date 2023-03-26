@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./js/index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="container">
+            <div class="row qwe">
+                <div class="logo-bank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4fG7pEbkGItCt0UumINiVajPwlKyYMfa8w&usqp=CAU">
+                </div>
+                <div class="menu-bar row">
+                    <ul class="row">
+                        <li><h5 class="user-info-button">Ana Səhifə</h5></li>
+                        <li>
+                            <h5 id="menu-bar-pay">Ödəniş</h5>
+                            <div class="pay-menu menu-cix">
+                                <ul>
+                                  <li><h5 class="pay-metod-button">İnternet</h5></li>
+                                  <li><h5 class="pay-metod-button">Su</h5></li>
+                                  <li><h5 class="pay-metod-button">Qaz</h5></li>
+                                  <li><h5 class="pay-metod-button">İşıq</h5></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <h5 id="menu-bar-balance">Balans dəyişimi</h5>
+                            <div class="balance-menu menu-cix">
+                                <ul>
+                                  <li><h5 class="add-balance-button">Balans artırma</h5></li>
+                                  <li><h5 class="take-balance-button">Pul çıxartma</h5></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><h5 class="cart-to-cart-button">Köçürmə</h5></li>
+                    </ul>
+                </div>
+                <div class="language-selector">
+                    <label for="language-select">Dil seç:</label>
+                    <select id="language-select">
+                      <option value="az">Azərbaycan</option>
+                      <option value="en">İngilis</option>
+                      <option value="ru">Russian</option>
+                    </select>
+                  </div>
+            </div>
+    </header>
+
+    <main class="container">
+        <div class=" row">
+
+            <div class="user-info box-design">
+                <h4>Ad: Ibrahim</h4>
+                <h4>Soyad: Qasimzade</h4>
+                <h4>Balans: <span class="balance"></span></h4>
+            </div>
+
+            <div class="pay-metod box-design">
+                <h4>Balans: <span class="balance"></span></h4>
+                <h3>Ödəmək istədiyiniz məbləği daxil edin</h4>
+                <input type="number" class="balance-num" id="input1" min="1">
+                <button class="pay-button">Ödə</button>
+            </div>
+
+            <div class="add-balance box-design">
+                <h4>Balans: <span class="balance"></span></h4>
+                <h3>Artirmaq istediyiniz məbləği daxil edin</h4>
+                <input type="number" class="balance-num" min="1">
+                <button>Artır</button>
+            </div>
+
+            <div class="take-balance box-design">
+                <h4>Balans: <span class="balance"></span></h4>
+                <h3>Çıxartmaq istediyiniz məbləği daxil edin</h4>
+                <input type="number" class="balance-num" min="1">
+                <button>Çıxart</button>
+            </div>
+
+            <div class="cart-to-cart box-design">
+                <h4>Balans: <span class="balance"></span></h4>
+                <h3>Göndərəcəyiniz kartın nömrəsini yaz</h4>
+                <input type="number" placeholder="Card Number">
+                <input type="number" class="balance-num" min="1">
+                <button>Çıxart</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
