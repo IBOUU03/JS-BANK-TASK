@@ -8,21 +8,13 @@ const userInfo = document.querySelector(".user-info");
 const userInfoButton = document.querySelector(".user-info-button")
 const payMetod = document.querySelector(".pay-metod");
 const addBalance = document.querySelector(".add-balance");
-const takeBalance = document.querySelector(".take-balance");
 const cartToCart = document.querySelector(".cart-to-cart");
 const cartToCartButton = document.querySelector(".cart-to-cart-button");
 const payMetodButton = document.querySelectorAll(".pay-metod-button");
 const addBalanceButton = document.querySelector(".add-balance-button");
-const takeBalanceButton = document.querySelector(".take-balance-button");
 const payButton = document.querySelector(".pay-button");
-
-const enterBalance = document.querySelector("#input1");
-
-let checkBalance = Number(enterBalance.value);
-
-
-
-
+const addButton = document.querySelector(".add-button");
+const cartButton = document.querySelector(".cart-button");
 sap(balanceChange, balanceMenu);
 sap(payMe, payMenu);
 
@@ -36,20 +28,59 @@ payMetodButton.forEach(function(element) {
 });
 changeMenu(userInfoButton,userInfo);
 changeMenu(addBalanceButton,addBalance);
-changeMenu(takeBalanceButton,takeBalance);
 changeMenu(cartToCartButton,cartToCart);
 
-payButton.addEventListener("click", function(){
-  if (checkBalance > 0) {
-    if(balanceNum > checkBalance){
-      balanceNum -= checkBalance;
+
+payButton.addEventListener("click", function() {
+  const enterBalance = document.getElementById("input1").valueAsNumber;
+  if (enterBalance > 0 || enterBalance == "") {
+    if (enterBalance < balanceNum) {
+      balanceNum -= enterBalance;
+      balanceValue.forEach(function(item) {
+        item.textContent = balanceNum;
+      });
     }else{
-      alert("Balansda pul yoxdur")
+      alert("Balansdca kifayət qədər pul yoxdur")
     }
   }else{
-    alert("Miqdar daxil edin")
+    alert("Duzgun reqem daxil edin")
   }
-})
+});
+
+addButton.addEventListener("click", function() {
+  
+  const enterBalance = document.getElementById("input2").valueAsNumber;
+  if (enterBalance > 0 || enterBalance == "") {
+      balanceNum += enterBalance;
+      balanceValue.forEach(function(item) {
+        item.textContent = balanceNum;
+      });
+  }else{
+    alert("Duzgun reqem daxil edin")
+  }
+});
+
+cartButton.addEventListener("click", function() {
+  const enterBalance = document.getElementById("input3").valueAsNumber;
+  var cardNumber = document.getElementById("card-number").value;
+  if (cardNumber.length == 16 ) {
+    if (enterBalance > 0 || enterBalance == "") {
+      if (enterBalance < balanceNum) {
+        balanceNum -= enterBalance;
+        balanceValue.forEach(function(item) {
+          item.textContent = balanceNum;
+        });
+      }else{
+        alert("Balansdca kifayət qədər pul yoxdur")
+      }
+    }else{
+      alert("Duzgun reqem daxil edin")
+    }
+  }else{
+    alert("Kart kodunu duzgun daxil edin")
+  }  
+});
+
 
 function sap(params,param) {
   params.addEventListener('click', function() {
@@ -62,13 +93,15 @@ function sap(params,param) {
   });
 }
 
+
+
 function displayNone(){
   userInfo.style.display = 'none';
   payMetod.style.display = 'none';
   addBalance.style.display = 'none';
-  takeBalance.style.display = 'none';
   cartToCart.style.display = 'none';
 }
+
 
 function changeMenu(param,params){
   param.addEventListener('click', function() {

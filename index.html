@@ -33,7 +33,6 @@
                             <div class="balance-menu menu-cix">
                                 <ul>
                                   <li><h5 class="add-balance-button">Balans artırma</h5></li>
-                                  <li><h5 class="take-balance-button">Pul çıxartma</h5></li>
                                 </ul>
                             </div>
                         </li>
@@ -70,23 +69,16 @@
             <div class="add-balance box-design">
                 <h4>Balans: <span class="balance"></span></h4>
                 <h3>Artirmaq istediyiniz məbləği daxil edin</h4>
-                <input type="number" class="balance-num" min="1">
-                <button>Artır</button>
-            </div>
-
-            <div class="take-balance box-design">
-                <h4>Balans: <span class="balance"></span></h4>
-                <h3>Çıxartmaq istediyiniz məbləği daxil edin</h4>
-                <input type="number" class="balance-num" min="1">
-                <button>Çıxart</button>
+                <input type="number" class="balance-num" id="input2" min="1">
+                <button class="add-button">Artır</button>
             </div>
 
             <div class="cart-to-cart box-design">
                 <h4>Balans: <span class="balance"></span></h4>
                 <h3>Göndərəcəyiniz kartın nömrəsini yaz</h4>
-                <input type="number" placeholder="Card Number">
-                <input type="number" class="balance-num" min="1">
-                <button>Çıxart</button>
+                <input type="number" placeholder="Card Number" id="card-number">
+                <input type="number" class="balance-num" id="input3" min="1">
+                <button class="cart-button">Göndər</button>
             </div>
         </div>
     </main>
